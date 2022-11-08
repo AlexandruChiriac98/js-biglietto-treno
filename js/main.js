@@ -1,18 +1,22 @@
 
 
-const PrezzoKm = parseInt(0.21);
+const PrezzoKm = 0.21;
 const Eta = parseInt(prompt("Inserisci Età"));
-const ScontoMinorenni = parseInt(PrezzoKm - ( PrezzoKm * 20 / 100 ));
-const ScontoOver = parseInt(PrezzoKm - ( PrezzoKm * 40 / 100 ));
+const ScontoMinorenni = PrezzoKm - ( PrezzoKm * 20 / 100 );
+const ScontoOver = PrezzoKm - ( PrezzoKm * 40 / 100 );
 const Percorso = parseInt(prompt("inserisci distanza"));
 let Prezzo;
+console.log(ScontoMinorenni, ScontoOver, Eta, Percorso, PrezzoKm);
 
 if( Eta < 18 ) {
     Prezzo = ScontoMinorenni * Percorso;
+    console.log(Prezzo);
 }else if( 18 >= Eta && Eta <= 65 ) {
     Prezzo = PrezzoKm * Percorso;
-}else {
+    console.log(Prezzo);
+}else if( Eta > 65 ) {
     Prezzo = ScontoOver * Percorso;
+    console.log(Prezzo);
 }
 
 console.log(Prezzo);
